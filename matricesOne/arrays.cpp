@@ -1,14 +1,24 @@
 #include <iostream>
 #include <stdlib.h>
+#include <time.h>
 #include "Matrix.h"
 
 extern template class Matrix<double>;
+extern template class Matrix<int>;
 //extern template class Matrix<string>;
 
 using namespace std;
 
+/*
+Justin Ecarma
+8.0
+3/10/2020
+Extra: I used my matrix class instead of the array class or vector class. 
+*/
+
 int main()
 {
+	srand(time(NULL));
 	//worksheet one, question 2
 	double sum = 0, average;
 	Matrix <double> numbersOne = Matrix <double>(1, 6);
@@ -44,7 +54,7 @@ int main()
 	}
 	
 	cout << "\n" << grades.getCell(0, grades.length() - 1);
-	for (int i = grades.length() - 2; i > 0; i--) {
+	for (int i = grades.length() - 2; i >= 0; i--) {
 		cout << ", " << grades.getCell(0, i); 
 	}
 
@@ -52,7 +62,7 @@ int main()
 
 	//worksheet one, question 4
 	
-	Matrix <int> ages = Matrix <int>(0, 20);
+	Matrix <int> ages = Matrix <int>(1, 20);
 	int aboveFifteen = 0, input;
 
 	for (int i = 0; i < ages.length(); i++) {
@@ -82,9 +92,39 @@ int main()
 		cout << "Which day would you like to see? (1 = Monday, 2 = Tuesday, etc.)" << endl;
 		cin >> day;
 
-		cout << "The sales for that day is " << 
+		cout << "The sales for that day is " << sales.getCell(0, (day - 1)) << endl;
+
+		cout << "Would you like to keep going? (\"No\" to stop going)" << endl;
+		cin >> keepgoing;
 
 	} while (keepgoing != "No");
 
+	//worksheet two, question 1
+
+	Matrix <int> numbersTwo = Matrix <int>(1, 10);
+	int favnum, input;
+
+	for (int i = 0; i < numbersTwo.length(); i++) {
+		cout << "Enter a number:";
+		cin >> input;
+		numbersTwo.setCell(0, i, input);
+	}
+
+	cout << "What is your favorite number?" << endl;
+	cinnum >> favnum;
+	cout << "Your favorite number appeared " << favoriteAppear()
+
+}
+
+int favoriteAppear(int favorite, Matrix numbers) {
+	int favnum;
+
+	for (int i = 0; i < numbers.length(); i++;) {
+		if (numbers.getCell(0, i) == favorite) {
+			favnum++;
+		}
+	}
+
+	return favnum;
 }
 
