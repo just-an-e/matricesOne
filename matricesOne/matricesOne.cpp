@@ -18,6 +18,7 @@ Extra: I used my matrix class instead of the array class or vector class.
 
 int main()
 {
+	/*
 	srand(time(NULL));
 	//worksheet one, question 2
 	double sum = 0, average;
@@ -98,7 +99,7 @@ int main()
 		cin >> keepgoing;
 
 	} while (keepgoing != "No");
-
+	*/
 	//worksheet two, question 1
 
 	Matrix <int> numbersTwo = Matrix <int>(1, 10);
@@ -111,15 +112,17 @@ int main()
 	}
 
 	cout << "What is your favorite number?" << endl;
-	cinnum >> favnum;
-	cout << "Your favorite number appeared " << favoriteAppear()
+	cin >> favnum;
+	cout << "Your favorite number appeared " << favoriteAppear(favnum, numbersTwo) << endl;
+
+
 
 }
 
-int favoriteAppear(int favorite, Matrix numbers) {
+int favoriteAppear(int favorite, Matrix <int> numbers) {
 	int favnum;
 
-	for (int i = 0; i < numbers.length(); i++;) {
+	for (int i = 0; i < numbers.length(); i++) {
 		if (numbers.getCell(0, i) == favorite) {
 			favnum++;
 		}
