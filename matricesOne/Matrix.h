@@ -7,8 +7,11 @@ template <typename T>
 class Matrix {
 private:
 	vector <vector<T>> mat;
+	int rows, columns;
 public:
 	Matrix <T> (int row, int column) {
+		rows = row;
+		columns = column;
 		mat.resize(row, vector<T>(column));
 		for (int i = 0; i < row; i++)
 			mat[i].resize(column);
@@ -19,6 +22,8 @@ public:
 	int getCell(int x, int y) {
 		return mat[x][y];
 	}
-
+	int length() {
+		return columns;
+	}
 
 };
