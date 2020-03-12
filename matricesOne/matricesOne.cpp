@@ -9,6 +9,9 @@ extern template class Matrix<int>;
 
 using namespace std;
 
+int favoriteAppear(int favorite, Matrix <int> numbers);
+void printBackwards(Matrix <string> words);
+
 /*
 Justin Ecarma
 8.0
@@ -55,6 +58,7 @@ int main()
 	}
 	
 	cout << "\n" << grades.getCell(0, grades.length() - 1);
+	
 	for (int i = grades.length() - 2; i >= 0; i--) {
 		cout << ", " << grades.getCell(0, i); 
 	}
@@ -99,11 +103,11 @@ int main()
 		cin >> keepgoing;
 
 	} while (keepgoing != "No");
-	*/
+	
 	//worksheet two, question 1
 
 	Matrix <int> numbersTwo = Matrix <int>(1, 10);
-	int favnum, input;
+	int favnumber = 0, input;
 
 	for (int i = 0; i < numbersTwo.length(); i++) {
 		cout << "Enter a number:";
@@ -112,15 +116,23 @@ int main()
 	}
 
 	cout << "What is your favorite number?" << endl;
-	cin >> favnum;
-	cout << "Your favorite number appeared " << favoriteAppear(favnum, numbersTwo) << endl;
+	cin >> favnumber;
+	cout << "Your favorite number appeared " << favoriteAppear(favnumber, numbersTwo) << " times." << endl;
+	*/
+	//worksheet two, question 2
 
+	Matrix <string> backWords = Matrix <string>(1, 5);
+	backWords.setCell(0, 1, "radar");
+	backWords.setCell(0, 1, "warts");
+	backWords.setCell(0, 1, "evil");
+	backWords.setCell(0, 1, "racecar");
+	backWords.setCell(0, 1, "toot");
 
 
 }
 
 int favoriteAppear(int favorite, Matrix <int> numbers) {
-	int favnum;
+	int favnum = 0;
 
 	for (int i = 0; i < numbers.length(); i++) {
 		if (numbers.getCell(0, i) == favorite) {
@@ -129,5 +141,14 @@ int favoriteAppear(int favorite, Matrix <int> numbers) {
 	}
 
 	return favnum;
+}
+
+void printBackwards(Matrix <string> words) {
+	string placeholder = "";
+	for (int j = 0; j < words.length(); j++) {
+		for (int i = (words.getCell(0, j)).length() - 2; i >= 0; i--) {
+			
+		}
+	}
 }
 
